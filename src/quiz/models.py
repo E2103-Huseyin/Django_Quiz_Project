@@ -29,14 +29,14 @@ class Update(models.Model):#diğer modellerde aynısı olduğu için ortak class
     
 class Question(Update):
     
-    Scale = (
+    SCALE = (
         (0, "Beginner"),
         (1, "Intermediate"),
-        (2, "Advance")
+        (2, "Advanced")
     )
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     title = models.CharField(max_length=300, verbose_name="question")
-    difficulty = models.IntegerField(choices=Scale)
+    difficulty = models.IntegerField(choices=SCALE)
     date_create = models.DateTimeField(auto_now=True)
     
     
@@ -47,6 +47,9 @@ class Answer(Update):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     answer_text = models.CharField(max_length=250)
     is_right = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.answer_text
     
      
     
