@@ -9,6 +9,11 @@ class Category(models.Model):
         return self.name
     class Meta:
         verbose_name_plural = "Categories"
+    
+    @property    #attribute olarak kullanmamızı sağlar. sonuna parantez koymadan veri alabiliriz
+    def quiz_count(self):
+        return self.quiz_set.count()
+    
 
 class Quiz(models.Model):
     title = models.CharField(max_length=100, verbose_name="Quiz Title")
