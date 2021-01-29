@@ -53,7 +53,7 @@ class Question(Update):
         return self.title
     
 class Answer(Update):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answer') #related_name='answer' YAZMAZSAK answer json da gözükmüyor
     answer_text = models.CharField(max_length=250)
     is_right = models.BooleanField(default=False)
     

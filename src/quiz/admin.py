@@ -5,6 +5,8 @@ from .models import Category,Quiz,Question,Answer
 class AnswerInline(nested_admin.NestedTabularInline):
     model = Answer
     # sortable_field_name = "position"
+    extra = 2  #fazladan Answer soru hanesi
+    max_num = 5 #maksimum seçenek/şık (Answer Text) hakkı
 
 class QuestionInline(nested_admin.NestedTabularInline):
     model = Question
