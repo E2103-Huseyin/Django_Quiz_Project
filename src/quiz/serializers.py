@@ -35,7 +35,7 @@ class AnswerSerializer(serializers.ModelSerializer):
     
 class QuestionSerializer(serializers.ModelSerializer):
     answer = AnswerSerializer(many=True, read_only=True)
-    #SCALE = ( (0, "Beginner"), (1, "Intermediate"), (2, "Advanced")  burada difficulty değerini 0,1,2 değil de Advanced/Intermediate/Beginner olarak gösterebilmek için:
+    #models.py içerisinde yer alan SCALE = ( (0, "Beginner"), (1, "Intermediate"), (2, "Advanced")  burada difficulty değerini 0,1,2 değil de Advanced/Intermediate/Beginner olarak gösterebilmek için:
     #serializers.SerializerMethodField() özel method kullanılır
     difficulty = serializers.SerializerMethodField()
     
