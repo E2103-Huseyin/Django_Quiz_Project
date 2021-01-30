@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'nested_admin',
+    'rest_framework.authtoken',
     'quiz.apps.QuizConfig',
     'users.apps.UsersConfig',
 ]
@@ -110,8 +111,19 @@ AUTH_PASSWORD_VALIDATORS = [
 #     'PAGE_SIZE': 1
 # }
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 
