@@ -116,7 +116,8 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # 'rest_framework.authentication.BasicAuthentication',
-        # 'rest_framework.authentication.SessionAuthentication',
+        
+        # 'rest_framework.authentication.SessionAuthentication', #SessionAuthentication aynı browser ın diğer sayfalarında da Authenticate olmamızı sağlar
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
